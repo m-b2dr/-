@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة المذاكرة الشخصية | Computer Science Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-indigo-600 p-3 rounded-xl text-white shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide">لوحة متابعة المواد الدراسية</h1>
+                    <p class="text-xs text-slate-400">كل ما تحتاجه لمراجعة وتنظيم كورساتك في مكان واحد</p>
+                </div>
+            </div>
+            <!-- Navigation Tabs -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="switchTab('ds')" id="btn-ds" class="px-3 py-1.5 rounded-lg font-medium text-xs transition bg-indigo-600 text-white shadow">Data Structure</button>
+                <button onclick="switchTab('sa')" id="btn-sa" class="px-3 py-1.5 rounded-lg font-medium text-xs transition bg-slate-700 text-slate-300 hover:bg-slate-600">System Analysis</button>
+                <button onclick="switchTab('p1')" id="btn-p1" class="px-3 py-1.5 rounded-lg font-medium text-xs transition bg-slate-700 text-slate-300 hover:bg-slate-600">Programming-1</button>
+                <button onclick="switchTab('co')" id="btn-co" class="px-3 py-1.5 rounded-lg font-medium text-xs transition bg-slate-700 text-slate-300 hover:bg-slate-600">Computer Organization</button>
+                <button onclick="switchTab('mm')" id="btn-mm" class="px-3 py-1.5 rounded-lg font-medium text-xs transition bg-slate-700 text-slate-300 hover:bg-slate-600">Multimedia</button>
+                <button onclick="switchTab('or')" id="btn-or" class="px-3 py-1.5 rounded-lg font-medium text-xs transition bg-slate-700 text-slate-300 hover:bg-slate-600">Operations Research</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- ================= DATA STRUCTURE ================= -->
+        <section id="tab-ds" class="space-y-6">
+            <div class="bg-gradient-to-r from-indigo-900/50 to-slate-800 border border-indigo-500/30 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <span class="bg-indigo-500/20 text-indigo-400 text-xs px-3 py-1 rounded-full font-semibold">المادة الأولى</span>
+                    <h2 class="text-2xl font-bold mt-2 text-indigo-200">Data Structure (بنية البيانات)</h2>
+                    <p class="text-sm text-slate-400 mt-1">تجميعة المحاضرات، الشيتات، وفيديوهات الشرح الخاصة بالـ Arrays, Linked Lists, & Stacks.</p>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1v3YsiUSlFUD-206BkwDG282_gLRx2V5r?usp=drive_link" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 transition shadow-lg shadow-indigo-600/20">
+                    <i class="fa-brands fa-google-drive"></i> فتح درايف المادة
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-slate-800/60 border border-slate-700 p-4 rounded-xl">
+                    <i class="fa-solid fa-layer-group text-indigo-400 mb-2"></i>
+                    <h3 class="font-bold text-slate-200">Array</h3>
+                    <p class="text-xs text-slate-400 mt-1">Unsorted & Sorted arrays</p>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700 p-4 rounded-xl">
+                    <i class="fa-solid fa-link text-indigo-400 mb-2"></i>
+                    <h3 class="font-bold text-slate-200">Linked List</h3>
+                    <p class="text-xs text-slate-400 mt-1">Dynamic node structures</p>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700 p-4 rounded-xl">
+                    <i class="fa-solid fa-server text-indigo-400 mb-2"></i>
+                    <h3 class="font-bold text-slate-200">Stack with Array</h3>
+                    <p class="text-xs text-slate-400 mt-1">LIFO implemented via static arrays</p>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700 p-4 rounded-xl">
+                    <i class="fa-solid fa-network-wired text-indigo-400 mb-2"></i>
+                    <h3 class="font-bold text-slate-200">Stack with Linked List</h3>
+                    <p class="text-xs text-slate-400 mt-1">Dynamic memory stack</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-slate-200">
+                    <i class="fa-brands fa-youtube text-red-500"></i> الفيديوهات المرتبطة
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-red-500/10 text-red-400 px-2 py-0.5 rounded font-medium">Array & Binary Search</span>
+                            <h4 class="font-semibold mt-2 text-sm">Unsorted and sorted Array & Binary Search</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <a href="https://youtu.be/pASx8xQtIYY" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> فيديو Array 1</a>
+                            <a href="https://youtu.be/TU2S9P5CRUE" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> فيديو Array 2</a>
+                            <a href="https://youtu.be/qxhfkoDGGZc" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> Binary Search</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded font-medium">Linked List</span>
+                            <h4 class="font-semibold mt-2 text-sm">Linked List Comprehensive Tutorials</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <a href="https://youtu.be/cQ-HCe_IAos" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> الجزء الأول</a>
+                            <a href="https://youtu.be/80pnhhHGpWc" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> الجزء الثاني</a>
+                            <a href="https://youtu.be/nyIF45QKX4k" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> الجزء الثالث</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-medium">Stack with Linked List</span>
+                            <h4 class="font-semibold mt-2 text-sm">Stack Implementation using Linked List</h4>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://youtu.be/i_Q_YZwdoMg" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 inline-flex items-center transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الشرح</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded font-medium">Stack with Array</span>
+                            <h4 class="font-semibold mt-2 text-sm">Stack Implementation using Arrays</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <a href="https://youtu.be/vdPNQzgBu_I" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> فيديو 1</a>
+                            <a href="https://youtu.be/N4o69Gqarhc" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-1.5 rounded-lg border border-slate-600 transition"><i class="fa-solid fa-play ml-1"></i> فيديو 2</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SYSTEM ANALYSIS ================= -->
+        <section id="tab-sa" class="space-y-6 hidden">
+            <div class="bg-gradient-to-r from-blue-900/50 to-slate-800 border border-blue-500/30 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <span class="bg-blue-500/20 text-blue-400 text-xs px-3 py-1 rounded-full font-semibold">المادة الثانية</span>
+                    <h2 class="text-2xl font-bold mt-2 text-blue-200">System Analysis (تحليل النظم)</h2>
+                    <p class="text-sm text-slate-400 mt-1">ملفات الشابترات والفيديوهات التوضيحية.</p>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1--tob8EMjXQSW11qUvB6gaU68dXtsDZ5" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 transition shadow-lg shadow-blue-600/20">
+                    <i class="fa-brands fa-google-drive"></i> فتح درايف المادة
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-800/60 border border-slate-700 p-5 rounded-xl flex justify-between items-center">
+                    <div>
+                        <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded">PDF Document</span>
+                        <h3 class="font-bold text-slate-200 mt-2">Chapter 1</h3>
+                    </div>
+                    <a href="https://drive.google.com/file/d/11dgVTqVn80-_Chzw1jC3Wzbqv8x2ONWc/view?usp=drivesdk" target="_blank" class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg text-sm text-blue-300 transition">عرض الملف</a>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700 p-5 rounded-xl flex justify-between items-center">
+                    <div>
+                        <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">Presentation</span>
+                        <h3 class="font-bold text-slate-200 mt-2">Chapter 2</h3>
+                    </div>
+                    <a href="https://docs.google.com/presentation/d/11d4lgytkZHlxvFjgFbEaFlfa43kJO9Y4/edit?usp=drivesdk&ouid=105459973442224126311&rtpof=true&sd=true" target="_blank" class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg text-sm text-amber-300 transition">عرض الملف</a>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-slate-200">
+                    <i class="fa-brands fa-youtube text-red-500"></i> فيديوهات الشرح
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-red-500/10 text-red-400 px-2 py-0.5 rounded">شابتر 1</span>
+                            <h4 class="font-semibold mt-2 text-sm">Chapter 1 - Part 1</h4>
+                        </div>
+                        <a href="https://youtu.be/BOq3vAkpTkA" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-red-500/10 text-red-400 px-2 py-0.5 rounded">شابتر 1</span>
+                            <h4 class="font-semibold mt-2 text-sm">Chapter 1 - Part 2</h4>
+                        </div>
+                        <a href="https://youtu.be/qiUeXk4oSr4" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">شابتر 2</span>
+                            <h4 class="font-semibold mt-2 text-sm">Chapter 2 Video</h4>
+                        </div>
+                        <a href="https://youtu.be/QXfBGHwI7YA" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROGRAMMING-1 ================= -->
+        <section id="tab-p1" class="space-y-6 hidden">
+            <div class="bg-gradient-to-r from-emerald-900/50 to-slate-800 border border-emerald-500/30 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <span class="bg-emerald-500/20 text-emerald-400 text-xs px-3 py-1 rounded-full font-semibold">المادة الثالثة</span>
+                    <h2 class="text-2xl font-bold mt-2 text-emerald-200">Programming-1 (برمجة 1 & C++)</h2>
+                    <p class="text-sm text-slate-400 mt-1">المحاضرات (حتى المحاضرة 4 سلايد 41)، الأساسيات، الـ OOP، ومفاهيم البوينترز والستركت.</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <a href="https://drive.google.com/drive/folders/1yjSbJ9yedhErdiuBizkASoDOAsAQvQIm?usp=sharing" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-medium text-xs flex items-center gap-2 transition shadow-lg shadow-emerald-600/20">
+                        <i class="fa-brands fa-google-drive"></i> الدرايف العام
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1diGkpPejfFSQVCJ1sDcOctllQRxlCMzC" target="_blank" class="bg-slate-700 hover:bg-slate-600 text-emerald-300 px-4 py-2.5 rounded-xl font-medium text-xs flex items-center gap-2 transition">
+                        <i class="fa-solid fa-file-lines"></i> المحاضرات (حتى Lec 4 - Slide 41)
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-slate-800/60 border border-slate-700 p-5 rounded-2xl">
+                <h3 class="font-bold text-slate-200 mb-3"><i class="fa-solid fa-list-check text-emerald-400 ml-2"></i> المواضيع المقرر مراجعتها ودراستها:</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 text-xs text-slate-300">
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Datatypes, Loops & Conditions</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Arrays & Functions</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Structs</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Pointers</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Intro to OOP</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Classes & Objects</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Private vs Public</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Constructor</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Member Function</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Interface of Class</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Preprocessor Wrapper</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Exception Handling</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-slate-200">
+                    <i class="fa-brands fa-youtube text-red-500"></i> فيديوهات الشرح والملاحظات المخصصة
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-red-500/10 text-red-400 px-2 py-0.5 rounded">مراجعة عامة</span>
+                            <h4 class="font-semibold mt-2 text-sm">Revision (Datatypes, Loops, Arrays...)</h4>
+                            <p class="text-xs text-amber-400 mt-1"><i class="fa-solid fa-clock ml-1"></i> مطلوب: أول 33 دقيقة فقط</p>
+                        </div>
+                        <a href="https://youtu.be/rYPv_3Ttpl4" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded">Struct</span>
+                            <h4 class="font-semibold mt-2 text-sm">Structures in C++</h4>
+                        </div>
+                        <a href="https://youtu.be/aTNm3GgMu1Y" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded">Pointers</span>
+                            <h4 class="font-semibold mt-2 text-sm">Pointers in C++</h4>
+                        </div>
+                        <a href="https://youtu.be/38IG-UToeZ0" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded">OOP Playlist</span>
+                            <h4 class="font-semibold mt-2 text-sm">Object Oriented Programming</h4>
+                            <p class="text-xs text-amber-400 mt-1"><i class="fa-solid fa-list-ol ml-1"></i> حتى الفيديو الثامن (8 videos)</p>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=6U6WtWG3NrA&list=PL1DUmTEdeA6KLEvIO0NyrkT91BVle8BOU" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> فتح قائمة التشغيل</a>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded">Advanced</span>
+                            <h4 class="font-semibold mt-2 text-sm">Preprocessor Wrapper</h4>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=mz_Nfdl9yHs" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded">Handling Errors</span>
+                            <h4 class="font-semibold mt-2 text-sm">Exception Handling</h4>
+                        </div>
+                        <a href="https://youtu.be/ri5fB9Vq7Uo" target="_blank" class="mt-4 text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-lg text-center block transition"><i class="fa-solid fa-play ml-1"></i> مشاهدة الفيديو</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= COMPUTER ORGANIZATION (CO) ================= -->
+        <section id="tab-co" class="space-y-6 hidden">
+            <div class="bg-gradient-to-r from-purple-900/50 to-slate-800 border border-purple-500/30 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <span class="bg-purple-500/20 text-purple-400 text-xs px-3 py-1 rounded-full font-semibold">المادة الرابعة</span>
+                    <h2 class="text-2xl font-bold mt-2 text-purple-200">Computer Organization (تنظيم الحاسب)</h2>
+                    <p class="text-sm text-slate-400 mt-1">تجميعة المواضيع الأساسية والفيديوهات المخصصة بالشرح.</p>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1_4b9uxtORopuUBMB09qkDv7Tw_Uh384R" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 transition shadow-lg shadow-purple-600/20">
+                    <i class="fa-brands fa-google-drive"></i> فتح درايف المادة
+                </a>
+            </div>
+
+            <div class="bg-slate-800/60 border border-slate-700 p-5 rounded-2xl">
+                <h3 class="font-bold text-slate-200 mb-3"><i class="fa-solid fa-microchip text-purple-400 ml-2"></i> مواضيع المادة (Topics):</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-xs text-slate-300">
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Intro to Computer Organization & Architecture</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Instruction Cycle</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Registers and its Types</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Intro to Assembly</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Interrupts</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Buses</span>
+                    <span class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700">• Cache Memory</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-slate-200">
+                    <i class="fa-brands fa-youtube text-red-500"></i> فيديوهات الشرح (7 فيديوهات)
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="https://youtu.be/_Z4BcXL1n7Y" target="_blank" class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 hover:border-purple-500/50 transition flex justify-between items-center">
+                        <div>
+                            <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded">فيديو 1</span>
+                            <h4 class="font-semibold text-sm mt-1">Part 1 Overview</h4>
+                        </div>
+                        <i class="fa-solid fa-play text-purple-400"></i>
+                    </a>
+                    <a href="https://youtu.be/m_pX0JqZHgk" target="_blank" class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 hover:border-purple-500/50 transition flex justify-between items-center">
+                        <div>
+                            <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded">فيديو 2</span>
+                            <h4 class="font-semibold text-sm mt-1">Part 2 Overview</h4>
+                        </div>
+                        <i class="fa-solid fa-play text-purple-400"></i>
+                    </a>
+                    <a href="https://youtu.be/4wSaGD1trZw" target="_blank" class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 hover:border-purple-500/50 transition flex justify-between items-center">
+                        <div>
+                            <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded">فيديو 3</span>
+                            <h4 class="font-semibold text-sm mt-1">Part 3 Overview</h4>
+                        </div>
+                        <i class="fa-solid fa-play text-purple-400"></i>
+                    </a>
+                    <a href="https://youtu.be/r0aiAc-_diQ" target="_blank" class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 hover:border-purple-500/50 transition flex justify-between items-center">
+                        <div>
+                            <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded">فيديو 4</span>
+                            <h4 class="font-semibold text-sm mt-1">Part 4 Overview</h4>
+                        </div>
+                        <i class="fa-solid fa-play text-purple-400"></i>
+                    </a>
+                    <a href="https://youtu.be/Q16xDUx7BZQ" target="_blank" class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 hover:border-purple-500/50 transition flex justify-between items-center">
+                        <div>
+                            <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded">فيديو 5</span>
+                            <h4 class="font-semibold text-sm mt-1">Part 5 Overview</h4>
+                        </div>
+                        <i class="fa-solid fa-play text-purple-400"></i>
+                    </a>
+                    <a href="https://youtu.be/XAHDnVKP-ZI" target="_blank" class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 hover:border-purple-500/50 transition flex justify-between items-center">
+                        <div>
+                            <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded">فيديو 6</span>
+                            <h4 class="font-semibold text-sm mt-1">Part 6 Overview</h4>
+                        </div>
+                        <i class="fa-solid fa-play text-purple-400"></i>
+                    </a>
+                    <a href="https://youtu.be/r34JiTuXBRk" target="_blank" class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 hover:border-purple-500/50 transition flex justify-between items-center col-span-1 sm:col-span-2 lg:col-span-1">
+                        <div>
+                            <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">فيديو 7 (ملاحظة)</span>
+                            <h4 class="font-semibold text-sm mt-1">Part 7 Tutorial</h4>
+                            <p class="text-xs text-amber-400 mt-1"><i class="fa-solid fa-clock ml-1"></i> مطلوب: لحد الدقيقة 51 فقط</p>
+                        </div>
+                        <i class="fa-solid fa-play text-amber-400"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MULTIMEDIA ================= -->
+        <section id="tab-mm" class="space-y-6 hidden">
+            <div class="bg-gradient-to-r from-pink-900/50 to-slate-800 border border-pink-500/30 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <span class="bg-pink-500/20 text-pink-400 text-xs px-3 py-1 rounded-full font-semibold">المادة الخامسة</span>
+                    <h2 class="text-2xl font-bold mt-2 text-pink-200">Multimedia (الوسائط المتعددة)</h2>
+                    <p class="text-sm text-slate-400 mt-1">روابط المحاضرات مع فيديوهات الشرح المرفقة وحل المسائل.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Lec 1 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-md font-bold">Lecture 1</span>
+                        <h4 class="font-bold text-slate-200 mt-2">المحاضرة الأولى</h4>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://drive.google.com/file/d/1Nv9bN_r44BYNH3Ao4h8UwiUEAxPG566M/view?usp=drivesdk" target="_blank" class="text-xs bg-slate-900 hover:bg-slate-700 text-slate-300 p-2 rounded-lg block text-center border border-slate-700"><i class="fa-solid fa-file-pdf ml-1 text-red-400"></i> ملف المحاضرة</a>
+                        <a href="https://drive.google.com/file/d/15Wu8gYBu8kuqD4kBrQRTbtD7UJvZh0Zp/view?usp=drive_link" target="_blank" class="text-xs bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 p-2 rounded-lg block text-center border border-pink-500/30"><i class="fa-solid fa-video ml-1"></i> فيديو الشرح</a>
+                    </div>
+                </div>
+
+                <!-- Lec 2 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-md font-bold">Lecture 2</span>
+                        <h4 class="font-bold text-slate-200 mt-2">المحاضرة الثانية</h4>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://drive.google.com/file/d/1MlMtOxo7Q1e_RH1APaApVmLDgwjGmJan/view?usp=drivesdk" target="_blank" class="text-xs bg-slate-900 hover:bg-slate-700 text-slate-300 p-2 rounded-lg block text-center border border-slate-700"><i class="fa-solid fa-file-pdf ml-1 text-red-400"></i> ملف المحاضرة</a>
+                        <a href="https://drive.google.com/file/d/159wU8FgrztdatTAwLGRYpxt7alWkM_53/view?usp=drivesdk" target="_blank" class="text-xs bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 p-2 rounded-lg block text-center border border-pink-500/30"><i class="fa-solid fa-video ml-1"></i> فيديو الشرح</a>
+                    </div>
+                </div>
+
+                <!-- Lec 3 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-md font-bold">Lecture 3</span>
+                        <h4 class="font-bold text-slate-200 mt-2">المحاضرة الثالثة</h4>
+                        <p class="text-xs text-slate-400 mt-1">يتضمن شرح زميل + حل مسائل</p>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://drive.google.com/file/d/1WrzQn5WCc-4-Vl8yX5OiDyy-FD4LLoh_/view?usp=drivesdk" target="_blank" class="text-xs bg-slate-900 hover:bg-slate-700 text-slate-300 p-2 rounded-lg block text-center border border-slate-700"><i class="fa-solid fa-file-pdf ml-1 text-red-400"></i> ملف المحاضرة</a>
+                        <a href="https://drive.google.com/file/d/1s8HZ9hcEDvsAAwZmPYR3oH1AygXqN60s/view?usp=drive_link" target="_blank" class="text-xs bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 p-2 rounded-lg block text-center border border-pink-500/30"><i class="fa-solid fa-video ml-1"></i> فيديو الشرح (Drive)</a>
+                        <a href="https://youtube.com/playlist?list=PLTqsyqab4JMU&si=AP7f5fCSBlHJddcF" target="_blank" class="text-xs bg-red-600/20 hover:bg-red-600/30 text-red-300 p-2 rounded-lg block text-center border border-red-500/30"><i class="fa-brands fa-youtube ml-1"></i> قائمة حل المسائل (YouTube)</a>
+                    </div>
+                </div>
+
+                <!-- Lec 4 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-md font-bold">Lecture 4</span>
+                        <h4 class="font-bold text-slate-200 mt-2">المحاضرة الرابعة</h4>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://drive.google.com/file/d/1nct6STobqpx9i8rkkQiNy5BAZ8W-oIj5/view?usp=drive_link" target="_blank" class="text-xs bg-slate-900 hover:bg-slate-700 text-slate-300 p-2 rounded-lg block text-center border border-slate-700"><i class="fa-solid fa-file-pdf ml-1 text-red-400"></i> ملف المحاضرة</a>
+                        <a href="https://drive.google.com/file/d/1qa9Ro8vgWuLbZ4lUz_bX6dBYaFZt9aeS/view?usp=drivesdk" target="_blank" class="text-xs bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 p-2 rounded-lg block text-center border border-pink-500/30"><i class="fa-solid fa-video ml-1"></i> فيديو شرح 1</a>
+                        <a href="https://drive.google.com/file/d/1ZozPFjoraW_-kuObBsYAzY0Zb8IcN6Bh/view?usp=drivesdk" target="_blank" class="text-xs bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 p-2 rounded-lg block text-center border border-pink-500/30"><i class="fa-solid fa-video ml-1"></i> فيديو شرح 2</a>
+                    </div>
+                </div>
+
+                <!-- Lec 5 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-md font-bold">Lecture 5</span>
+                        <h4 class="font-bold text-slate-200 mt-2">المحاضرة الخامسة</h4>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://1drv.ms/b/c/7AFD7B412BBA816D/IQD6Th6TqUTIR6TueggEIQsuARf8AomwngJA4Y93ssywq44" target="_blank" class="text-xs bg-slate-900 hover:bg-slate-700 text-slate-300 p-2 rounded-lg block text-center border border-slate-700"><i class="fa-solid fa-cloud ml-1 text-blue-400"></i> ملف المحاضرة (OneDrive)</a>
+                        <a href="https://youtu.be/jzOs7QSrgbQ" target="_blank" class="text-xs bg-red-600/20 hover:bg-red-600/30 text-red-300 p-2 rounded-lg block text-center border border-red-500/30"><i class="fa-brands fa-youtube ml-1"></i> فيديو الشرح (YouTube)</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= OPERATIONS RESEARCH ================= -->
+        <section id="tab-or" class="space-y-6 hidden">
+            <div class="bg-gradient-to-r from-teal-900/50 to-slate-800 border border-teal-500/30 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <span class="bg-teal-500/20 text-teal-400 text-xs px-3 py-1 rounded-full font-semibold">المادة السادسة</span>
+                    <h2 class="text-2xl font-bold mt-2 text-teal-200">Operations Research (بحوث العمليات)</h2>
+                    <p class="text-sm text-slate-400 mt-1">الكتاب، ملفات الشرح، وفيديوهات الـ Linear Programming والـ Simplex Method.</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <a href="https://drive.google.com/drive/folders/1jJ3AaWkFOuV906BFuGC3a_8YgzR64adr?usp=drive_link" target="_blank" class="bg-teal-600 hover:bg-teal-500 text-white px-4 py-2.5 rounded-xl font-medium text-xs flex items-center gap-2 transition shadow-lg shadow-teal-600/20">
+                        <i class="fa-brands fa-google-drive"></i> درايف المادة
+                    </a>
+                    <a href="https://drive.google.com/file/d/1J33gpaXmsZVFSI3haWYSdFddrmWSvWdg/view?usp=sharing" target="_blank" class="bg-slate-700 hover:bg-slate-600 text-teal-300 px-4 py-2.5 rounded-xl font-medium text-xs flex items-center gap-2 transition">
+                        <i class="fa-solid fa-book"></i> كتاب المادة
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <div class="bg-slate-800/60 border border-slate-700 p-5 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded">الجزء النظرى</span>
+                        <h3 class="font-bold text-slate-200 mt-2">المحاضرة 1 و 2 (Introduction & Theory)</h3>
+                        <p class="text-xs text-slate-400 mt-1">بيشرح المحاضرة الأولى والثانية والجزء النظري للمادة</p>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://drive.google.com/file/d/1XZnMkuOdgqEUwtEg1aZW2QeUTRkeqUZU/view?usp=drive_link" target="_blank" class="text-xs bg-slate-900 hover:bg-slate-700 text-teal-300 p-2 rounded-lg block text-center border border-slate-700"><i class="fa-solid fa-file-lines ml-1"></i> ملف Linear PDF</a>
+                        <a href="https://youtu.be/iNkyPv84bkA" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 p-2 rounded-lg block text-center transition"><i class="fa-solid fa-play ml-1 text-red-400"></i> فيديو الشرح (Lec 1-2)</a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/60 border border-slate-700 p-5 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded">Linear Programming</span>
+                        <h3 class="font-bold text-slate-200 mt-2">البرمجة الخطية (Formulation & Solutions)</h3>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://youtu.be/gCURZRzCjmc" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 p-2 rounded-lg block text-center transition"><i class="fa-solid fa-play ml-1 text-red-400"></i> فيديو الشرح الأول</a>
+                        <a href="https://youtu.be/qizYyA6cnrc" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 p-2 rounded-lg block text-center transition"><i class="fa-solid fa-play ml-1 text-red-400"></i> فيديو الشرح الثاني</a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/60 border border-slate-700 p-5 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">Simplex Method</span>
+                        <h3 class="font-bold text-slate-200 mt-2">طريقة السمبلكس (Simplex Algorithm)</h3>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://youtu.be/yhhRnmqP1-E" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 p-2 rounded-lg block text-center transition"><i class="fa-solid fa-play ml-1 text-red-400"></i> فيديو Simplex 1</a>
+                        <a href="https://youtu.be/pU8RD4H2XZs" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 p-2 rounded-lg block text-center transition"><i class="fa-solid fa-play ml-1 text-red-400"></i> فيديو Simplex 2</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 border-t border-slate-700 text-center py-6 mt-12 text-slate-400 text-xs">
+        <p>تم إعداد وتنظيم هذه المنصة خصيصاً لتسهيل المذاكرة وتجميع المواد بكفاءة عالية 🚀</p>
+    </footer>
+
+    <!-- JavaScript for Tabs -->
+    <script>
+        function switchTab(tabId) {
+            const tabs = ['ds', 'sa', 'p1', 'co', 'mm', 'or'];
+            
+            // Hide all tabs & reset button classes
+            tabs.forEach(t => {
+                document.getElementById('tab-' + t).classList.add('hidden');
+                document.getElementById('btn-' + t).className = 'px-3 py-1.5 rounded-lg font-medium text-xs transition bg-slate-700 text-slate-300 hover:bg-slate-600';
+            });
+
+            // Active colors mapping
+            const activeClasses = {
+                'ds': 'bg-indigo-600 text-white shadow',
+                'sa': 'bg-blue-600 text-white shadow',
+                'p1': 'bg-emerald-600 text-white shadow',
+                'co': 'bg-purple-600 text-white shadow',
+                'mm': 'bg-pink-600 text-white shadow',
+                'or': 'bg-teal-600 text-white shadow'
+            };
+
+            // Show selected tab & set active button class
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            document.getElementById('btn-' + tabId).className = 'px-3 py-1.5 rounded-lg font-medium text-xs transition ' + activeClasses[tabId];
+        }
+    </script>
+</body>
+</html>
